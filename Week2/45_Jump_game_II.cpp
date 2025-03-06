@@ -27,10 +27,10 @@ class Solution {
         
     };
 
-
+/*
 int main()
 {
-    vector<int> nums = {2,3,1,1,4};
+    vector<int> nums = {10,9,8,7,6,5,4,3,2,1,1,0};
     Solution sol;
     int result = sol.jump(nums);
 
@@ -40,3 +40,4 @@ int main()
     return 0;
 
 }
+*/

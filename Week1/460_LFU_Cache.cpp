@@ -75,6 +75,7 @@ private:
     }
 };
 
+/*
 int main()
 {
     // cnt(x) = the use counter for key x
@@ -97,3 +98,4 @@ cout<< lfu->get(3) <<endl;      // return 3
 cout<< lfu->get(4) <<endl;      // return 4
                  // cache=[4,3], cnt(4)=2, cnt(3)=3
 }
+*/

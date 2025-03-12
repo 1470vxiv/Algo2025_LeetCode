@@ -63,6 +63,7 @@ class Solution {
         }
     };
 
+/*
 int main()
 {
         vector<vector<int>> intervals = { 
@@ -75,4 +76,4 @@ int main()
         cout<<result<<endl;
     
         
-}
+}*/

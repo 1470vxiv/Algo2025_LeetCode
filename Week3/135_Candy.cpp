@@ -8,7 +8,7 @@ class Solution {
             
             int n = ratings.size();
             int result = 0;
-            vector<int> distr(n,1);
+            vector<int> distr(n,1); //每人至少1顆
             for(int i=1; i<n; i++)//traversal左到右、element右比左
             {
                 if(ratings[i] > ratings[i-1])

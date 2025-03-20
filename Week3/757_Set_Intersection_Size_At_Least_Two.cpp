@@ -9,10 +9,10 @@ class Solution {
             int n = intervals.size();
             int result = 0;
             
-            //sorting according to tails
+            //sorting according to second value(從小到大)
             sort(intervals.begin(), intervals.end(), \
                 [](const vector<int>& a, const vector<int>& b) {
-                if (a[1] == b[1]) // If second values are equal, sort by first value
+                if (a[1] == b[1]) // If second values are equal, sort by first value(從大到小), 排完後越前面的區間interval越小，越需要先被考慮
                     return a[0] > b[0];
                 return a[1] < b[1];
             });
@@ -23,6 +23,7 @@ class Solution {
             }
             cout<<endl;*/
 
+            //紀錄2個最新被挑選的數
             int maxChosen;
             int secChosen;
 
@@ -35,24 +36,24 @@ class Solution {
                     if(maxChosen >= intervals[i][0] && maxChosen <= intervals[i][1])
                     {
                         if(secChosen >= intervals[i][0] && secChosen <= intervals[i][1]){
-                            count = 2;
+                            count = 2; //兩個最新的數都在interval內，要挑0個數
                         }
-                        else count = 1;
+                        else count = 1;//一個最新的數都在interval內，要挑1個數
                     }
                 }
 
-                if(count == 0 || i==0)
+                if(count == 0 || i==0) //要挑兩個數
                 {
-                    maxChosen = intervals[i][1];
+                    maxChosen = intervals[i][1]; //挑interval內最大的
                     //cout<<intervals[i][1]<<' ';
-                    secChosen = intervals[i][1]-1;
+                    secChosen = intervals[i][1]-1;//挑interval內第二大的
                     //cout<<intervals[i][1]-1<<' ';
                     result += 2;
                 }
                 else if(count == 1)
                 {
                     secChosen = maxChosen;
-                    maxChosen = intervals[i][1];
+                    maxChosen = intervals[i][1];//挑interval內最大的
                     //cout<<intervals[i][1]<<' ';
                     result ++;
                 }

@@ -7,12 +7,12 @@ using namespace std;
 class Solution {
     public:
         int numRescueBoats(vector<int>& people, int limit) {
-            sort(people.begin(), people.end());
+            sort(people.begin(), people.end()); //從小排到大
             int n = people.size();
             vector<bool> onboat(n, false);
             int result = 0;
             
-            //one front traversal, one back traversal
+            //one front traversal, one back traversal, 找在limit內又有選到最重的人的雙人組合
             for(int i=0; i<n; i++)
             {
                 if(onboat[i] == false)

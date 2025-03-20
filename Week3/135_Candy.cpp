@@ -9,7 +9,7 @@ class Solution {
             int n = ratings.size();
             int result = 0;
             vector<int> distr(n,1);
-            for(int i=1; i<n; i++)//左到右、右比左
+            for(int i=1; i<n; i++)//traversal左到右、element右比左
             {
                 if(ratings[i] > ratings[i-1])
                 {    
@@ -17,7 +17,7 @@ class Solution {
                 }
             }
 
-            for(int i=n-1; i>0; i--)//右到左、左比右
+            for(int i=n-1; i>0; i--)//traversal右到左、element左比右
             {
                 if(ratings[i-1] > ratings[i])
                 {

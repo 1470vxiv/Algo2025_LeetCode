@@ -8,7 +8,7 @@ class Solution {
 public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         vector<int> result;
-        deque<int> dq;
+        deque<int> dq; //存index of nums, 從小到大排, 用deque才能pop_front又pop_back
         int m = nums.size();
         int max_idx = 0;
 
@@ -28,7 +28,7 @@ public:
             dq.push_back(i);     
             
 
-            if(i >= k-1) result.push_back(nums[dq.front()]);
+            if(i >= k-1) result.push_back(nums[dq.front()]); //first element of dq must be the maximum
         }
 
     return result;   

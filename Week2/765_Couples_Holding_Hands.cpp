@@ -7,7 +7,7 @@ class Solution {
     public:
         int minSwapsCouples(vector<int>& row) {
             int n = row.size();
-            unordered_map<int, int> position; // Maps value to its index
+            unordered_map<int, int> position; // Maps value to its index, 找到partner的時間O(1)
     
             // Build the index mapping
             for (int i = 0; i < n; i++) {
@@ -17,9 +17,10 @@ class Solution {
             int swaps = 0;
             
             // Process each couple in the row
-            for (int i = 0; i < n; i += 2) {
+            for (int i = 0; i < n; i += 2) { //一次處理一對couple
                 int first = row[i];
                 int second;
+                //找對應的partner
                 if(first%2 == 0){
                     second = first + 1;
                 }else{

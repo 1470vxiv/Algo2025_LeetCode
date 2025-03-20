@@ -7,6 +7,7 @@ private:
     int capacity;
     std::list<std::pair<int, int>> cacheList;
     std::unordered_map<int, std::list<std::pair<int, int>>::iterator> cacheMap;
+//要記住每個key對應的list iterator，這樣在erase的時候才會O(1) (不用traversal whole list)
 
     void moveToFront(int key, int value) {
         cacheList.erase(cacheMap[key]);

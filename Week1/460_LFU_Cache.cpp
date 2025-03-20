@@ -6,9 +6,9 @@ using namespace std;
 
 class LFUCache {
 private:
-    int capacity, minFreq;
+    int capacity, minFreq; //紀錄當前min. freq.
     unordered_map<int, pair<int, int>> keyToVal; // key -> {value, frequency}
-    unordered_map<int, list<int>> freqToKeys; // frequency -> list of keys (order of insertion matters)
+    unordered_map<int, list<int>> freqToKeys; // frequency -> list of keys (order of insertion matters), most recently used排最後面
     unordered_map<int, list<int>::iterator> keyToIter; // key -> iterator in freqToKeys list
 
 public:

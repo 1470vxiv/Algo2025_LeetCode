@@ -6,8 +6,9 @@ class LRUCache {
 private:
     int capacity;
     std::list<std::pair<int, int>> cacheList;
+//用list對頭尾操作為O(1)，紀錄most(最頭)/least(最尾) frequent used key
     std::unordered_map<int, std::list<std::pair<int, int>>::iterator> cacheMap;
-//要記住每個key對應的list iterator，這樣在erase任意位置的cache的時候才會O(1) (不用traversal whole list)
+//用hash table(map)記住每個key對應的list iterator，這樣在erase任意位置的cache的時候才會O(1) (不用traversal whole list)
 
     void moveToFront(int key, int value) {
         cacheList.erase(cacheMap[key]);

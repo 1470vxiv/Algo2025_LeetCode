@@ -41,7 +41,7 @@ public:
     }
 };
 
-/**/
+/*
 int main() {
     LRUCache* obj = new LRUCache(2);
     obj->put(1, 1);
@@ -55,4 +55,4 @@ int main() {
     std::cout << obj->get(4) << std::endl; // Output: 4
     delete obj;
     return 0;
-}
+}*/

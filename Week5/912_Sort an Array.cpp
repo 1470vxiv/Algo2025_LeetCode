@@ -56,6 +56,7 @@ class Solution {
         
     };
 
+/*
 int main()
 {
     vector<int> array = {5,1,1,2,0,0};
@@ -64,3 +65,4 @@ int main()
     for(int i=0; i<result.size(); i++) cout<<result[i]<<" ";
     cout<<endl;
 }
+*/

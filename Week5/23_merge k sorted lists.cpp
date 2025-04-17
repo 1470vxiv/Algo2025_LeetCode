@@ -15,6 +15,7 @@ class Solution {
 
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
+        // Remove all nullptr lists before processing
         lists.erase(remove(lists.begin(), lists.end(), nullptr), lists.end());
         if(lists.empty()) return nullptr;
 

@@ -16,6 +16,7 @@ class Solution {
         ListNode* reverseKGroup(ListNode* head, int k) {
             if (!head) return nullptr;
 
+            //確保list長度>k
             ListNode* Ktail = head;
             for(int i=0; i<k-1; i++)
             {

@@ -10,14 +10,14 @@ class Solution {
             if (amount == 0) return 0;
     
             vector<set<int>> tree(1);
-            tree[0] = {0};
-            int stepNum = 0;
+            tree[0] = {0}; //tree記錄每一層包含的value, 不斷spand
+            int stepNum = 0; //紀錄tree的層數
     
-            set<int> visited;
-            visited.insert(0);
+            set<int> visited; //記錄哪個value已經出現過
+            visited.insert(0); 
     
             while (true) {
-                set<int> currentNodes;
+                set<int> currentNodes; //tree的最新一層包含的value
     
                 for (int coin : coins) {
                     for (const auto& val : tree[stepNum]) {

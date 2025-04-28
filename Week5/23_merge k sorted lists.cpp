@@ -35,7 +35,7 @@ public:
         
         ListNode* head = lists[minIndex];
         lists[minIndex] = lists[minIndex]->next;
-        if(lists[minIndex] == nullptr) lists.erase(lists.begin()+minIndex);
+        //if(lists[minIndex] == nullptr) lists.erase(lists.begin()+minIndex);
         head->next = mergeKLists(lists);
         return head;
     

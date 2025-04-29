@@ -14,12 +14,12 @@ class Solution {
 public:
     int maxPathSum(TreeNode* root) {
         int maxSum = INT_MIN;
-        maxGain(root, maxSum);
-        return maxSum;
+        int lastMaxGain = maxGain(root, maxSum); //one side
+        return maxSum; //two side
     }
 private:
     int maxGain(TreeNode* node, int& maxSum) {
-        if (!node) return 0;
+        if (!node) return 0; //base case
 
         // Recursively get the maximum gain from left and right subtrees
         int leftGain = max(maxGain(node->left, maxSum), 0);

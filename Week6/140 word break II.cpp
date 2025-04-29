@@ -33,7 +33,7 @@ class Solution {
                     if(subString == word) {
                         string nextString = currentString + word + ' ';  //word接龍串
                         string remained = s.substr(i + 1); //留下已選擇word後面的string
-                        backtracking(remained, wordDict, result, nextString); //主string為remained, nextString為下一層的currentString
+                        backtracking(remained, wordDict, result, nextString); //remained為下一層的主string, nextString為下一層的currentString
                     }
                 } 
                 

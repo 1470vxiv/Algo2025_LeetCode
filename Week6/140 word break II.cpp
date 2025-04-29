@@ -17,8 +17,9 @@ class Solution {
         void backtracking(string& s, vector<string>& wordDict, vector<string>& result, string& currentString) {
 
             if(s.empty()) {
-                
-                if (!currentString.empty() && currentString.back() == ' ') {
+
+                //去掉最尾端的' '
+                if (!currentString.empty() && currentString.back() == ' ') { 
                     currentString.pop_back();
                 }
                 result.push_back(currentString);
@@ -30,9 +31,9 @@ class Solution {
                 subString += s[i];
                 for(auto &word : wordDict) {
                     if(subString == word) {
-                        string nextString = currentString + word + ' ';
-                        string remained = s.substr(i + 1);
-                        backtracking(remained, wordDict, result, nextString);
+                        string nextString = currentString + word + ' ';  //word接龍串
+                        string remained = s.substr(i + 1); //留下已選擇word後面的string
+                        backtracking(remained, wordDict, result, nextString); //主string為remained, nextString為下一層的currentString
                     }
                 } 
                 

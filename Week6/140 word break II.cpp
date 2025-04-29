@@ -8,14 +8,10 @@ class Solution {
     public:
         vector<string> wordBreak(string s, vector<string>& wordDict) {
             vector<string> result;
-
             string remained = s;
             string currentString;
-
-
             backtracking(s, wordDict, result, currentString);
             return result;
-            
         }
     private:
         void backtracking(string& s, vector<string>& wordDict, vector<string>& result, string& currentString) {

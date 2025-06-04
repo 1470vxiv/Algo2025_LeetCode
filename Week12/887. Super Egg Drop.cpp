@@ -14,10 +14,12 @@ public:
             m++;  // try one more move
 
             // Compute for each egg count 1 to k
-            for (int eggs = 1; eggs <= k; eggs++) {
-                dp[eggs][m] = dp[eggs - 1][m - 1] + dp[eggs][m - 1] + 1;
-                // Meaning: if we have `eggs` and `m` moves,
-                // we can cover that many floors
+            for (int e = 1; e <= k; e++) {
+                dp[e][m] = dp[e - 1][m - 1] + dp[e][m - 1] + 1;
+                // Meaning: if we have `e` eggs and `m` moves, we can cover that many floors
+                // now check 1 floor
+                // if break: check lower part with e-1 eggs, m-1 moves -> dp[eggs - 1][m - 1].
+                // if no break: check upper part with e eggs, m-1 moves -> dp[eggs][m - 1].
             }
         }
 

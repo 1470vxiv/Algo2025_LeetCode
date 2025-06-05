@@ -11,10 +11,10 @@ public:
         multiset<int> ws(workers.end() - k, workers.end());  // Take k strongest workers
         for (int i = k - 1; i >= 0; i--) {  // Hardest k tasks
             auto it = ws.lower_bound(tasks[i]);  // Try assign without pill
-            if (it != ws.end()) {
+            if (it != ws.end()) { //can assign directly
                 ws.erase(it);
-            } else {
-                if (pills == 0) return false;
+            } else { //cannot assign directly
+                if (pills == 0) return false; //pills用光
                 auto it2 = ws.lower_bound(tasks[i] - pillStrength);
                 if (it2 == ws.end()) return false;
                 ws.erase(it2);
